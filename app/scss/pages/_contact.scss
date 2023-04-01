@@ -1,0 +1,205 @@
+.contact {
+  background-color: $clr-700;
+  position: relative;
+  &__content {
+    padding: 60px 0px 87px 0px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 343px;
+    margin-bottom: 50px;
+  }
+
+  &__heading {
+    font-size: $fs-500;
+    color: $clr-500;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $clr-600;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__box {
+    position: relative;
+  }
+
+  &__input {
+    background-color: $clr-700;
+    width: 100%;
+  }
+
+  &__input--name {
+    padding: 10px 35px;
+    border: none;
+    color: $clr-500;
+    border-bottom: 1px solid $clr-600;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__input--email {
+    padding: 10px 35px;
+    border: none;
+    color: $clr-500;
+    border-bottom: 1px solid $clr-600;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__input::placeholder {
+    color: $clr-600;
+  }
+
+  &__input:focus {
+    border-bottom: 1px solid red;
+  }
+
+  &__message {
+    border-bottom: 1px solid $clr-500;
+    margin-bottom: 32px;
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: $fs-100;
+    height: 100px;
+    outline: none;
+    color: $clr-500;
+    background-color: $clr-700;
+    border-style: none;
+  }
+
+  &__textarea::placeholder {
+    color: $clr-600;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    color: $clr-500;
+    outline: none;
+    border: none;
+    background-color: $clr-700;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    color: $clr-800;
+  }
+
+  &__button::after {
+    @include contactButton;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 70px;
+    right: 50%;
+    width: 530px;
+    height: 129px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 5px;
+    color: $clr-500;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__faliure,
+  &__succes {
+    right: 0;
+    opacity: 0;
+  }
+
+  &__faliure,
+  &__error {
+    color: red;
+  }
+
+  &__succes {
+    color: $clr-800;
+  }
+
+  &__error {
+    font-size: $fs-100;
+    margin-top: 2px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 0px 92px;
+      margin: 0 162px;
+    }
+
+    &__heading {
+      font-size: $fs-700;
+    }
+
+    &__text {
+      font-size: $fs-200;
+    }
+
+    &__img {
+      position: absolute;
+      bottom: 15px;
+      right: 77.5%;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contact {
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 220px;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      margin-bottom: 110px;
+    }
+
+    &__heading {
+      font-size: $fs-800;
+      margin-bottom: 0;
+    }
+
+    &__img {
+      bottom: 40px;
+      right: 77.5%;
+    }
+  }
+}

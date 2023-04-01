@@ -1,0 +1,195 @@
+.project {
+  &__content {
+    padding: 80px 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    font-size: $fs-500;
+    color: $clr-500;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__button {
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    color: $clr-500;
+    background-color: $clr-900;
+    font-weight: $fw-700;
+    letter-spacing: 2.6px;
+  }
+
+  &__button:hover {
+    color: $clr-800;
+  }
+
+  &__button--contact::after {
+    @include projectButtonContact;
+  }
+
+  &__button--project::after {
+    @include projectButtonProject;
+  }
+
+  &__button--code::after {
+    @include projectButtonCode;
+  }
+
+  &__box {
+    margin-bottom: 40px;
+  }
+
+  &__box--last {
+    margin-bottom: 0px;
+  }
+
+  &__name {
+    font-size: $fs-300;
+    color: $clr-500;
+    line-height: $lh-400;
+    margin-bottom: 7px;
+  }
+
+  &__skills {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  &__skill {
+    font-size: $fs-200;
+    color: $clr-600;
+  }
+
+  &__overlay {
+    display: none;
+  }
+
+  &__link {
+    color: $clr-500;
+  }
+  &__link:hover {
+    color: $clr-800;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project {
+    position: relative;
+    &__title {
+      margin-bottom: 60px;
+    }
+    &__element {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: 1fr 1fr;
+    }
+    &__heading {
+      font-size: $fs-700;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .project {
+    &__buttons {
+      display: none;
+    }
+
+    &__box {
+      position: relative;
+    }
+
+    &__box:hover &__image {
+      opacity: 0.3;
+    }
+
+    &__box:hover &__overlay {
+      opacity: 1;
+    }
+
+    &__image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: 0.5s ease;
+      backface-visibility: hidden;
+    }
+
+    &__overlay {
+      display: flex;
+      transition: 0.5s ease;
+      display: block;
+      position: absolute;
+      height: auto;
+      top: 45%;
+      left: 50%;
+      transition: 0.5s ease;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    &__overlay--buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &__overlay--button {
+      background-color: inherit;
+      color: $clr-500;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__overlay--button:hover {
+      color: $clr-800;
+    }
+
+    &__overlay--viewproject {
+      font-size: $fs-200;
+      text-transform: uppercase;
+    }
+
+    &__overlay--viewcode {
+      font-size: $fs-200;
+      text-transform: uppercase;
+    }
+
+    &__overlay--viewcode::after {
+      @include projectButtonOverlayViewCode;
+    }
+
+    &__overlay--viewproject::after {
+      @include projectButtonOverlayViewProject;
+    }
+
+    &__overlay--link {
+      color: $clr-500;
+    }
+    &__overlay--link:hover {
+      color: $clr-800;
+    }
+  }
+}

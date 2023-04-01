@@ -1,0 +1,55 @@
+// Section project ---> button mixins
+
+@mixin buttons {
+  position: absolute;
+  content: "";
+  left: 50%;
+  height: 2px;
+  bottom: -10px;
+  transform: translate(-50%);
+  background-color: $clr-800;
+}
+
+@mixin projectButtonContact {
+  @include buttons;
+  width: 115px;
+}
+
+@mixin projectButtonProject {
+  @include buttons;
+  width: 130px;
+}
+
+@mixin projectButtonCode {
+  @include buttons;
+  width: 100px;
+}
+
+@mixin projectButtonOverlayViewCode {
+  @include buttons;
+  width: 100px;
+}
+
+@mixin projectButtonOverlayViewProject {
+  position: absolute;
+  content: "";
+  width: 140px;
+  left: 50%;
+  height: 2px;
+  bottom: 60px;
+  transform: translate(-50%);
+  background-color: $clr-800;
+}
+
+// Section contact ----> mixix for contact__button
+
+@mixin contactButton {
+  position: absolute;
+  content: "";
+  width: 106px;
+  right: -53px;
+  height: 2px;
+  bottom: -10px;
+  transform: translate(-50%);
+  background-color: $clr-800;
+}
